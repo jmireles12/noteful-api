@@ -4,7 +4,7 @@ const FoldersService = require('./folders/folders-service')
 
 const knexInstance = knex({
     client: 'pg',
-    connection: process.env.DB_URL,
+    connection: process.env.DATABASE_URL,
 })
 
 FoldersService.getAllFolders(knexInstance)

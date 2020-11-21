@@ -22,7 +22,7 @@ describe(`Folders service object`, () => {
     before(() => {
         db = knex({
             client: 'pg',
-            connection: process.env.TEST_DB_URL,
+            connection: process.env.TEST_DATABASE_URL,
         })
     })
 
