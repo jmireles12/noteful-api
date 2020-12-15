@@ -1,4 +1,4 @@
-const FoldersService = require('../src/folders-service')
+const FoldersService = require('../src/folders/folders-service')
 const knex = require('knex')
 const { expect } = require('chai')
 

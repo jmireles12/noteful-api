@@ -1,6 +1,6 @@
+const path = require('path')
 const express = require('express');
 const FoldersService = require('./folders-service');
-const { json } = require('express')
 
 const foldersRouter = express.Router()
 const jsonParser = express.json()
@@ -56,7 +56,7 @@ foldersRouter
                         error: { message: `Folder doesn't exist` }
                     })
                 }
-                req.folder = folder
+                res.folder = folder
                 next()
             })
             .catch(next)
