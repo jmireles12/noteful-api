@@ -1,7 +1,7 @@
 {
   "name": "noteful-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a boilerplate project used for starting new projects!",
   "main": "index.js",
   "scripts": {
     "test": "mocha --require test/setup.js",
@@ -14,7 +14,7 @@
     "deploy": "git push heroku master"
   },
   "keywords": [],
-  "author": "",
+  "author": "Juan Mireles",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
@@ -32,5 +32,16 @@
     "mocha": "^8.2.0",
     "nodemon": "^2.0.6",
     "supertest": "^5.0.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmireles12/noteful-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jmireles12/noteful-api/issues"
+  },
+  "homepage": "https://github.com/jmireles12/noteful-api#readme"
 }
