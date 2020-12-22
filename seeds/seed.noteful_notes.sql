@@ -1,3 +1,5 @@
+TRUNCATE noteful_notes RESTART IDENTITY CASCADE;
+
 INSERT INTO noteful_notes (name, modified, folderId, content)
 VALUES
         ('Dogs',

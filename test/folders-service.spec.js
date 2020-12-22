@@ -26,11 +26,11 @@ describe(`Folders service object`, () => {
         })
     })
 
-    before(() => db('noteful_folders').truncate())
-
-    afterEach(() => db('noteful_folders').truncate())
-
     after(() => db.destroy())
+
+    before('clean the table', () => db.raw('TRUNCATE noteful_folders, noteful_notes RESTART IDENTITY CASCADE'))
+
+    afterEach('cleanup', () => db.raw('TRUNCATE noteful_folders, noteful_notes RESTART IDENTITY CASCADE'))
 
     context(`Given 'noteful_folders' has data`, () => {
         beforeEach(() => {
