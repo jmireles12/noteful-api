@@ -26,6 +26,7 @@
     "parser": "^0.1.4",
     "pg": "^8.5.1",
     "postgrator-cli": "^3.3.0",
+    "react-devtools": "^4.10.1",
     "xss": "^1.0.8"
   },
   "devDependencies": {
