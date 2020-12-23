@@ -23,7 +23,6 @@
     "helmet": "^4.2.0",
     "knex": "^0.21.14",
     "morgan": "^1.10.0",
-    "parser": "^0.1.4",
     "pg": "^8.5.1",
     "postgrator-cli": "^3.3.0",
     "react-devtools": "^4.10.1",
