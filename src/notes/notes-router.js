@@ -10,7 +10,7 @@ const serializeNote = note => ({
     id: note.id,
     name: note.name,
     modified: note.modified,
-    folderid: note.folderid,
+    folderId: note.folderId,
     content: note.content,
 })
 
@@ -26,8 +26,8 @@ notesRouter
             .catch(next)
     })
     .post(jsonParser, (req, res, next) => {
-        const { name, modified, folderid, content } = req.body
-        const newNote = { name, modified, folderid, content }
+        const { name, modified, folderId, content } = req.body
+        const newNote = { name, modified, folderId, content }
 
         for(const [key, value] of Object.entries(newNote))
             if(value == null)
@@ -35,7 +35,7 @@ notesRouter
                     error: { message: `Missing '${key}' in request body` }
                 })
                 
-            newNote.folderid = folderid
+            newNote.folderId = folderId
 
             NotesService.insertNote(
                 req.app.get('db'),
@@ -82,8 +82,8 @@ notesRouter
             .catch(next)
     })
     .patch(jsonParser, (req, res, next) => {
-        const { name, modified, folderid, content } = req.body
-        const noteToUpdate = { name, modified, folderid, content }
+        const { name, modified, folderId, content } = req.body
+        const noteToUpdate = { name, modified, folderId, content }
 
         const numberOfValues = Object.values(noteToUpdate).filter(Boolean).length
         if(numberOfValues === 0) {
