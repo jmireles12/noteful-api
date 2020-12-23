@@ -1,6 +1,6 @@
 TRUNCATE noteful_notes RESTART IDENTITY CASCADE;
 
-INSERT INTO noteful_notes (name, modified, folderId, content)
+INSERT INTO noteful_notes (name, modified, folderid, content)
 VALUES
         ('Dogs',
          '2019-01-03T00:00:00.000Z',

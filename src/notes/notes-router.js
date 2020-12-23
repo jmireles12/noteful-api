@@ -10,7 +10,7 @@ const serializeNote = note => ({
     id: note.id,
     name: note.name,
     modified: note.modified,
-    folderId: note.folderId,
+    folderid: note.folderid,
     content: note.content,
 })
 
@@ -26,8 +26,8 @@ notesRouter
             .catch(next)
     })
     .post(jsonParser, (req, res, next) => {
-        const { name, modified, folderId, content } = req.body
-        const newNote = { name, modified, folderId, content }
+        const { name, modified, folderid, content } = req.body
+        const newNote = { name, modified, folderid, content }
 
         for(const [key, value] of Object.entries(newNote))
             if(value == null)
@@ -35,7 +35,7 @@ notesRouter
                     error: { message: `Missing '${key}' in request body` }
                 })
                 
-            newNote.folderId = folderId
+            newNote.folderid = folderid
 
             NotesService.insertNote(
                 req.app.get('db'),
@@ -82,14 +82,14 @@ notesRouter
             .catch(next)
     })
     .patch(jsonParser, (req, res, next) => {
-        const { name, modified, folderId, content } = req.body
-        const noteToUpdate = { name, modified, folderId, content }
+        const { name, modified, folderid, content } = req.body
+        const noteToUpdate = { name, modified, folderid, content }
 
         const numberOfValues = Object.values(noteToUpdate).filter(Boolean).length
         if(numberOfValues === 0) {
             return res.status(400).json({
                 error: {
-                    message: `Request body must contain either 'name', 'modified', 'folderId' or 'content'`
+                    message: `Request body must contain either 'name', 'modified', 'folderid' or 'content'`
                 }
             })
         }
