@@ -59,11 +59,11 @@ describe(`Folders service object`, () => {
         })
 
         it(`deleteFolder() removes a folder by id from 'noteful_folders' table`, () => {
-            const folderId = 3
-            return FoldersService.deleteFolder(db, folderId)
+            const folderid = 3
+            return FoldersService.deleteFolder(db, folderid)
                 .then(() => FoldersService.getAllFolders(db))
                 .then(allFolders => {
-                    const expected = testFolders.filter(folder => folder.id !== folderId)
+                    const expected = testFolders.filter(folder => folder.id !== folderid)
                         expect(allFolders).to.eql(expected)
                 })
         })

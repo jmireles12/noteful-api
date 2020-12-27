@@ -89,7 +89,7 @@ notesRouter
         if(numberOfValues === 0) {
             return res.status(400).json({
                 error: {
-                    message: `Request body must contain either 'name', 'modified', 'folderId' or 'content'`
+                    message: `Request body must contain either 'name', 'modified', 'folderid' or 'content'`
                 }
             })
         }
